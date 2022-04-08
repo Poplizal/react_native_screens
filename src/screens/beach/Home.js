@@ -1,10 +1,18 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {StyleSheet, View, Text, Image, ScrollView} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 
 //import icons
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -86,8 +94,16 @@ const Home = () => {
         {/* recommend  */}
         <View style={styles.recommend}>
           <Text style={styles.title}>Popular Places</Text>
-          <ScrollView style={styles.recommend_container} horizontal>
-            <View style={styles.recommend_item}>
+          <ScrollView
+            style={styles.recommend_container}
+            horizontal
+            showsHorizontalScrollIndicator={false}>
+            <TouchableOpacity
+              style={styles.recommend_item}
+              activeOpacity={0.8}
+              onPress={() => {
+                navigation.navigate('details');
+              }}>
               <Image
                 style={styles.recommend_image}
                 source={require('./assests/pexels-vincent-gerbouin-1174732.jpg')}
@@ -103,7 +119,7 @@ const Home = () => {
                 Seychells
               </Text>
               <Text style={styles.price}>$0.00</Text>
-            </View>
+            </TouchableOpacity>
 
             <View style={styles.recommend_item}>
               <Image

@@ -11,7 +11,7 @@ import {
 //import icon
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Details = () => {
+const Details = ({navigation}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -22,11 +22,22 @@ const Details = () => {
             resizeMode="cover"
           />
           <View style={styles.btn_group}>
-            <TouchableOpacity onPress={() => {}}>
-              <MaterialCommunityIcons name="home" size={30} color="#fff" />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('home');
+              }}>
+              <MaterialCommunityIcons
+                name="arrow-left"
+                size={30}
+                color="#fff"
+              />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => {}}>
-              <MaterialCommunityIcons name="home" size={30} color="#fff" />
+              <MaterialCommunityIcons
+                name="content-save-outline"
+                size={30}
+                color="#fff"
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -81,7 +92,7 @@ const Details = () => {
             resizeMode="cover"
           />
         </ScrollView>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} activeOpacity={0.7}>
           <Text style={styles.btn_text}>Book Now</Text>
         </TouchableOpacity>
       </View>
@@ -108,14 +119,14 @@ const styles = StyleSheet.create({
   title: {fontSize: 24, fontWeight: 'bold', color: '#222', marginVertical: 10},
   desc_details: {flexDirection: 'row'},
   text: {fontSize: 15, marginRight: 10},
-  more_image: {marginVertical: 10, width: '100%'},
+  more_image: {marginVertical: 10, width: '100%', marginTop: 20},
   image: {width: 150, height: 120, borderRadius: 20, marginHorizontal: 10},
   btn: {
     paddingHorizontal: 20,
     paddingVertical: 10,
     marginHorizontal: '18%',
     marginVertical: 15,
-    backgroundColor: 'blue',
+    backgroundColor: '#0009ab',
     width: 250,
     borderRadius: 10,
     alignItems: 'center',
