@@ -1,3 +1,4 @@
+//Navigation for surfSignup
 <NavigationContainer style={styles.container}>
   <NativeStack.Navigator
     initialRouteName="welcome"
@@ -27,4 +28,41 @@
   </NativeStack.Navigator>
   {/* <SignUp /> */}
   {/* <Login /> */}
+</NavigationContainer>;
+
+//Navigation for beach
+<NavigationContainer>
+  <BottomTab.Navigator
+    screenOptions={{
+      headerShown: false,
+      tabBarShowLabel: false,
+      // color: 'coral',
+    }}>
+    <BottomTab.Screen
+      name="home"
+      component={Home}
+      options={{
+        tabBarIcon: ({size, color}) => {
+          return (
+            <MaterialCommunityIcons name="home" size={size} color={color} />
+          );
+        },
+      }}
+    />
+    <BottomTab.Screen
+      name="details"
+      component={Details}
+      options={{
+        tabBarIcon: ({size, color}) => {
+          return (
+            <MaterialCommunityIcons
+              name="rhombus-split"
+              size={size}
+              color={color}
+            />
+          );
+        },
+      }}
+    />
+  </BottomTab.Navigator>
 </NavigationContainer>;
