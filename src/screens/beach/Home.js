@@ -7,160 +7,164 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  StatusBar,
+  SafeAreaView,
 } from 'react-native';
 
 //import icons
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Home = ({navigation}) => {
+const Home = ({navigation, barColor}) => {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        {/* //header */}
-        <View style={styles.header}>
-          <View>
-            <Text style={styles.title}>Hello Morenike</Text>
-            <Text style={styles.desc}>Explore amazing places today</Text>
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          {/* //header */}
+          <View style={styles.header}>
+            <View>
+              <Text style={styles.title}>Hello Morenike</Text>
+              <Text style={styles.desc}>Explore amazing places today</Text>
+            </View>
+            <Image
+              style={styles.image}
+              source={require('./assests/pexels-andrea-piacquadio-839011.jpg')}
+            />
           </View>
-          <Image
-            style={styles.image}
-            source={require('./assests/pexels-andrea-piacquadio-839011.jpg')}
-          />
-        </View>
-        {/* //benner  */}
-        <View style={styles.benner}>
-          <Image
-            style={styles.benner_image}
-            source={require('./assests/pexels-vincent-gerbouin-1174732.jpg')}
-            resizeMode="cover"
-          />
-          <Text style={styles.benner_text}>
-            Maldive Island for you and your loved ones
-          </Text>
-        </View>
-        {/* categroy  */}
-        <View style={styles.category}>
-          <Text style={styles.title}>Category</Text>
-          <ScrollView
-            style={styles.category_container}
-            horizontal
-            showsHorizontalScrollIndicator={false}>
-            <View style={styles.category_item}>
-              <Image
-                style={styles.category_image}
-                source={require('./assests/undraw_Beach_rvmg.png')}
-                resizeMode="cover"
-              />
-              <Text style={styles.category_title}>Beach</Text>
-            </View>
-
-            <View style={styles.category_item}>
-              <Image
-                style={styles.category_image}
-                source={require('./assests/undraw_Photo_re_5blb.png')}
-                resizeMode="cover"
-              />
-              <Text style={styles.category_title}>Mountain</Text>
-            </View>
-
-            <View style={styles.category_item}>
-              <Image
-                style={styles.category_image}
-                source={require('./assests/undraw_quite_town_mg2q.png')}
-                resizeMode="cover"
-              />
-              <Text style={styles.category_title}>Hotel</Text>
-            </View>
-
-            <View style={styles.category_item}>
-              <Image
-                style={styles.category_image}
-                source={require('./assests/undraw_Building_re_xfcm.png')}
-                resizeMode="cover"
-              />
-              <Text style={styles.category_title}>Meseum</Text>
-            </View>
-
-            <View style={styles.category_item}>
-              <Image
-                style={styles.category_image}
-                source={require('./assests/undraw_Beach_rvmg.png')}
-                resizeMode="cover"
-              />
-              <Text style={styles.category_title}>Beach</Text>
-            </View>
-          </ScrollView>
-        </View>
-        {/* recommend  */}
-        <View style={styles.recommend}>
-          <Text style={styles.title}>Popular Places</Text>
-          <ScrollView
-            style={styles.recommend_container}
-            horizontal
-            showsHorizontalScrollIndicator={false}>
-            <TouchableOpacity
-              style={styles.recommend_item}
-              activeOpacity={0.8}
-              onPress={() => {
-                navigation.navigate('details');
-              }}>
-              <Image
-                style={styles.recommend_image}
-                source={require('./assests/pexels-vincent-gerbouin-1174732.jpg')}
-                resizeMode="cover"
-              />
-              <Text style={styles.recommend_title}>Anse Source d'Argent</Text>
-              <Text style={styles.location}>
-                <MaterialCommunityIcons
-                  name="map-marker"
-                  size={17}
-                  color="blue"
+          {/* //benner  */}
+          <View style={styles.benner}>
+            <Image
+              style={styles.benner_image}
+              source={require('./assests/pexels-vincent-gerbouin-1174732.jpg')}
+              resizeMode="cover"
+            />
+            <Text style={styles.benner_text}>
+              Maldive Island for you and your loved ones
+            </Text>
+          </View>
+          {/* categroy  */}
+          <View style={styles.category}>
+            <Text style={styles.title}>Category</Text>
+            <ScrollView
+              style={styles.category_container}
+              horizontal
+              showsHorizontalScrollIndicator={false}>
+              <View style={styles.category_item}>
+                <Image
+                  style={styles.category_image}
+                  source={require('./assests/undraw_Beach_rvmg.png')}
+                  resizeMode="cover"
                 />
-                Seychells
-              </Text>
-              <Text style={styles.price}>$0.00</Text>
-            </TouchableOpacity>
+                <Text style={styles.category_title}>Beach</Text>
+              </View>
 
-            <View style={styles.recommend_item}>
-              <Image
-                style={styles.recommend_image}
-                source={require('./assests/pexels-tom-fisk-3995803.jpg')}
-                resizeMode="cover"
-              />
-              <Text style={styles.recommend_title}>Matterhorn</Text>
-              <Text style={styles.location}>
-                <MaterialCommunityIcons
-                  name="map-marker"
-                  size={17}
-                  color="blue"
+              <View style={styles.category_item}>
+                <Image
+                  style={styles.category_image}
+                  source={require('./assests/undraw_Photo_re_5blb.png')}
+                  resizeMode="cover"
                 />
-                Switerzerland
-              </Text>
-              <Text style={styles.price}>$0.00</Text>
-            </View>
+                <Text style={styles.category_title}>Mountain</Text>
+              </View>
 
-            <View style={styles.recommend_item}>
-              <Image
-                style={styles.recommend_image}
-                source={require('./assests/pexels-james-owen-4219366.jpg')}
-                resizeMode="cover"
-              />
-              <Text style={styles.recommend_title}>Anse Source d'Argent</Text>
-              <Text style={styles.location}>
-                {' '}
-                <MaterialCommunityIcons
-                  name="map-marker"
-                  size={17}
-                  color="blue"
+              <View style={styles.category_item}>
+                <Image
+                  style={styles.category_image}
+                  source={require('./assests/undraw_quite_town_mg2q.png')}
+                  resizeMode="cover"
                 />
-                Seychells
-              </Text>
-              <Text style={styles.price}>$0.00</Text>
-            </View>
-          </ScrollView>
+                <Text style={styles.category_title}>Hotel</Text>
+              </View>
+
+              <View style={styles.category_item}>
+                <Image
+                  style={styles.category_image}
+                  source={require('./assests/undraw_Building_re_xfcm.png')}
+                  resizeMode="cover"
+                />
+                <Text style={styles.category_title}>Meseum</Text>
+              </View>
+
+              <View style={styles.category_item}>
+                <Image
+                  style={styles.category_image}
+                  source={require('./assests/undraw_Beach_rvmg.png')}
+                  resizeMode="cover"
+                />
+                <Text style={styles.category_title}>Beach</Text>
+              </View>
+            </ScrollView>
+          </View>
+          {/* recommend  */}
+          <View style={styles.recommend}>
+            <Text style={styles.title}>Popular Places</Text>
+            <ScrollView
+              style={styles.recommend_container}
+              horizontal
+              showsHorizontalScrollIndicator={false}>
+              <TouchableOpacity
+                style={styles.recommend_item}
+                activeOpacity={0.8}
+                onPress={() => {
+                  navigation.navigate('details');
+                }}>
+                <Image
+                  style={styles.recommend_image}
+                  source={require('./assests/pexels-vincent-gerbouin-1174732.jpg')}
+                  resizeMode="cover"
+                />
+                <Text style={styles.recommend_title}>Anse Source d'Argent</Text>
+                <Text style={styles.location}>
+                  <MaterialCommunityIcons
+                    name="map-marker"
+                    size={17}
+                    color="blue"
+                  />
+                  Seychells
+                </Text>
+                <Text style={styles.price}>$0.00</Text>
+              </TouchableOpacity>
+
+              <View style={styles.recommend_item}>
+                <Image
+                  style={styles.recommend_image}
+                  source={require('./assests/pexels-tom-fisk-3995803.jpg')}
+                  resizeMode="cover"
+                />
+                <Text style={styles.recommend_title}>Matterhorn</Text>
+                <Text style={styles.location}>
+                  <MaterialCommunityIcons
+                    name="map-marker"
+                    size={17}
+                    color="blue"
+                  />
+                  Switerzerland
+                </Text>
+                <Text style={styles.price}>$0.00</Text>
+              </View>
+
+              <View style={styles.recommend_item}>
+                <Image
+                  style={styles.recommend_image}
+                  source={require('./assests/pexels-james-owen-4219366.jpg')}
+                  resizeMode="cover"
+                />
+                <Text style={styles.recommend_title}>Anse Source d'Argent</Text>
+                <Text style={styles.location}>
+                  {' '}
+                  <MaterialCommunityIcons
+                    name="map-marker"
+                    size={17}
+                    color="blue"
+                  />
+                  Seychells
+                </Text>
+                <Text style={styles.price}>$0.00</Text>
+              </View>
+            </ScrollView>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

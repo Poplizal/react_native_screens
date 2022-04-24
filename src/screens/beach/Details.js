@@ -6,40 +6,23 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  StatusBar,
+  SafeAreaView,
 } from 'react-native';
 
 //import icon
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Details = ({navigation}) => {
+const Details = ({navigation, barColor}) => {
   return (
-    <ScrollView>
-      <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
           <Image
             style={styles.main_image}
             source={require('./assests/pexels-asad-photo-maldives-5785067.jpg')}
             resizeMode="cover"
           />
-          <View style={styles.btn_group}>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('home');
-              }}>
-              <MaterialCommunityIcons
-                name="arrow-left"
-                size={30}
-                color="#fff"
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
-              <MaterialCommunityIcons
-                name="content-save-outline"
-                size={30}
-                color="#fff"
-              />
-            </TouchableOpacity>
-          </View>
         </View>
         <View style={styles.desc}>
           <Text style={styles.title}>Anse Source d'Argent</Text>
@@ -65,7 +48,6 @@ const Details = ({navigation}) => {
             has finished processing.
           </Text>
         </View>
-
         <ScrollView
           style={styles.more_image}
           horizontal
@@ -95,8 +77,23 @@ const Details = ({navigation}) => {
         <TouchableOpacity style={styles.btn} activeOpacity={0.7}>
           <Text style={styles.btn_text}>Book Now</Text>
         </TouchableOpacity>
+      </ScrollView>
+      <View style={styles.btn_group}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('home');
+          }}>
+          <MaterialCommunityIcons name="arrow-left" size={30} color="#fff" />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {}}>
+          <MaterialCommunityIcons
+            name="content-save-outline"
+            size={30}
+            color="#fff"
+          />
+        </TouchableOpacity>
       </View>
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -105,6 +102,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     padding: 15,
+    // backgroundColor: 'red',
   },
   imageContainer: {width: '100%'},
   main_image: {width: '100%', height: 350, borderRadius: 15},
@@ -114,7 +112,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 15,
     position: 'absolute',
-    top: 15,
+    top: 20,
+    // backgroundColor: 'blue',
+    left: 15,
   },
   title: {fontSize: 24, fontWeight: 'bold', color: '#222', marginVertical: 10},
   desc_details: {flexDirection: 'row'},
@@ -125,13 +125,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     marginHorizontal: '18%',
-    marginVertical: 15,
+    marginVertical: 10,
     backgroundColor: '#0009ab',
     width: 250,
     borderRadius: 10,
     alignItems: 'center',
+    backgroundColor: 'blue',
   },
   btn_text: {fontSize: 21, color: '#fff', fontWeight: 'bold'},
+  bar: {backgroundColor: 'coral'},
 });
 
 export default Details;

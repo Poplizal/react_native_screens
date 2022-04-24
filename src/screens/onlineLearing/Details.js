@@ -225,14 +225,14 @@ const Details = ({navigation}) => {
   );
 };
 const styles = StyleSheet.create({
-  container: {width: '100%', padding: 15},
+  container: {width: '100%', padding: 15, height: '100%'},
   image: {
     width: '100%',
     height: 200,
     borderWidth: 2,
     borderColor: '#f2f2f2',
     borderRadius: 15,
-    marginVertical: 10,
+    marginBottom: 10,
   },
   title: {fontSize: 21, fontWeight: 'bold', color: '#222', marginBottom: 10},
   text: {fontSize: 15, fontWeight: 'bold', color: '#222'},

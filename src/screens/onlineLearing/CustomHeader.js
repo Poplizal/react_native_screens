@@ -27,7 +27,13 @@ const CustomHeader = () => {
   );
 };
 const styles = StyleSheet.create({
-  container: {width: '100%', flexDirection: 'row', alignItems: 'center'},
+  container: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+  },
   icon: {
     borderWidth: 1,
     borderColor: '#f2f2f2',
